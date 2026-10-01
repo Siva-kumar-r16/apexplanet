@@ -1,4 +1,3 @@
-````markdown
 # 🚀 ApexPlanet 45-Day Web Development Internship
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -109,8 +108,6 @@ Each task folder contains the projects and files completed during that stage of 
 ---
 
 ⭐ This repository documents my learning and development journey throughout the ApexPlanet Web Development Internship.
-
-```
 
 This version keeps the full internship structure while removing repetitive sections, so the main README stays clean and easy to maintain. The five task progression and timelines follow the internship document. :contentReference[oaicite:0]{index=0}
 ```
