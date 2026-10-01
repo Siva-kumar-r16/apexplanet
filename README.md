@@ -1,3 +1,4 @@
+````markdown
 # 🚀 ApexPlanet 45-Day Web Development Internship
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -7,188 +8,73 @@
 
 ## 📌 About
 
-This repository contains my projects, tasks, and practical implementations completed as part of the **45-Day Web Development Internship** at **ApexPlanet Software Pvt. Ltd.**
+This repository contains my projects and practical tasks completed during my **45-Day Web Development Internship at ApexPlanet Software Pvt. Ltd.**
 
-The internship focuses on developing practical skills in:
-
-- HTML
-- CSS
-- JavaScript
-- Responsive Web Design
-- DOM Manipulation
-- JavaScript APIs
-- Local Storage
-- Interactive Web Applications
-- Performance Optimization
-- Cross-Browser Compatibility
-
----
+The internship focuses on building practical skills in **HTML, CSS, JavaScript, responsive design, DOM manipulation, APIs, local storage, interactive web applications, and performance optimization.**
 
 ## 🏢 Internship
 
-**Organization:** ApexPlanet Software Pvt. Ltd.
-
-**Program:** Web Development Internship
-
-**Duration:** 45 Days
-
-**Technology:** HTML, CSS & JavaScript
+- **Organization:** ApexPlanet Software Pvt. Ltd.
+- **Program:** 45-Day Web Development Internship
+- **Technology:** HTML, CSS & JavaScript
 
 ---
 
 # 📚 Internship Tasks
 
 ## 🟢 Task 1 — Basics of Web Development
+**Days 1–9**
 
-**Duration:** Days 1–9
-
-### Objectives
-
-Learn and apply foundational HTML, CSS, and JavaScript concepts.
-
-### Work Included
-
-- Create a simple webpage using HTML
-- Use headings, paragraphs, images, and links
+- Build a basic webpage using HTML
+- Add headings, paragraphs, images, and links
 - Style the webpage using CSS
-- Apply colors, fonts, spacing, and layouts
 - Add basic JavaScript interactivity
-- Create a button that displays an alert message
 
-### Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-
----
+**Technologies:** HTML5 • CSS3 • JavaScript
 
 ## 🔵 Task 2 — Intermediate HTML, CSS & JavaScript
+**Days 10–18**
 
-**Duration:** Days 10–18
-
-### Objectives
-
-Enhance HTML and CSS skills and learn JavaScript DOM manipulation.
-
-### Work Included
-
-- Create a contact form using HTML and CSS
+- Create a contact form
 - Add JavaScript form validation
-- Validate required fields
-- Validate email input
-- Create responsive layouts
-- Use CSS Flexbox
-- Use CSS Grid
-- Apply media queries
-- Develop a dynamic To-Do List or Image Gallery
+- Build responsive layouts using Flexbox and Grid
+- Create a dynamic To-Do List or Image Gallery
 
-### Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- DOM Manipulation
-- Flexbox
-- CSS Grid
-
----
+**Technologies:** HTML5 • CSS3 • JavaScript • DOM • Flexbox • Grid
 
 ## 🟣 Task 3 — Advanced Styling and JavaScript
+**Days 19–27**
 
-**Duration:** Days 19–27
-
-### Objectives
-
-Develop advanced CSS and JavaScript skills for interactive and responsive websites.
-
-### Work Included
-
-- Apply responsive design using media queries
-- Optimize layouts for different screen sizes
+- Apply responsive design
 - Build an interactive quiz or image carousel
-- Use JavaScript for dynamic interactions
-- Fetch data from a public API
-- Display API data dynamically
+- Work with JavaScript interactions
+- Fetch and display data from a public API
 
-### Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- Responsive Design
-- APIs
-- Fetch API
-
----
+**Technologies:** HTML5 • CSS3 • JavaScript • APIs
 
 ## 🟠 Task 4 — Full Project Implementation
-
-**Duration:** Days 28–36
-
-### Objectives
-
-Combine HTML, CSS, and JavaScript to build fully functioning projects.
-
-### Work Included
+**Days 28–36**
 
 - Build a personal portfolio website
-- Create About, Projects, and Contact sections
-- Make the website responsive
-- Build a To-Do List or Note-Taking application
+- Create a To-Do List or Note-Taking App
 - Implement localStorage
-- Save and retrieve tasks or notes
 - Build a product listing page
-- Add filtering functionality
-- Add sorting functionality
+- Add filtering and sorting
 
-### Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- DOM
-- localStorage
-- Responsive Design
-
----
+**Technologies:** HTML5 • CSS3 • JavaScript • DOM • localStorage
 
 ## 🔴 Task 5 — Final Project and Optimization
-
-**Duration:** Days 37–45
-
-### Objectives
-
-Build a complete web application and optimize its performance, responsiveness, and compatibility.
-
-### Work Included
+**Days 37–45**
 
 - Build a complete web application
-- Implement dynamic features
+- Add dynamic features
 - Optimize CSS and JavaScript
-- Apply lazy loading
-- Reduce unnecessary HTTP requests
+- Implement lazy loading
 - Improve loading performance
-- Test across major browsers
-- Test on mobile devices
-- Fix compatibility issues
-- Ensure responsive behavior
+- Test browser compatibility
+- Ensure mobile responsiveness
 
-### Possible Capstone Projects
-
-- E-Commerce Website
-- Blog
-- Advanced Portfolio
-- Other complete web applications
-
-### Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- Responsive Design
-- Performance Optimization
-- Cross-Browser Testing
+**Technologies:** HTML5 • CSS3 • JavaScript • Responsive Design • Performance Optimization
 
 ---
 
@@ -200,26 +86,31 @@ apexplanet/
 ├── README.md
 │
 ├── Task-1/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
 ├── Task-2/
-│   ├── contact-form/
-│   ├── responsive-layout/
-│   └── todo-list/
-│
 ├── Task-3/
-│   ├── responsive-design/
-│   ├── interactive-quiz/
-│   └── api-project/
-│
 ├── Task-4/
-│   ├── portfolio/
-│   ├── todo-localstorage/
-│   └── product-listing/
-│
 └── Task-5/
-    ├── capstone-project/
-    ├── optimization/
-    └── testing/
+````
+
+Each task folder contains the projects and files completed during that stage of the internship.
+
+---
+
+# 👨‍💻 Author
+
+**Siva Kumar R**
+
+🌐 **Portfolio:**
+[https://sivakumars-portfolio.netlify.app/](https://sivakumars-portfolio.netlify.app/)
+
+💻 **GitHub:**
+[https://github.com/Siva-kumar-r16](https://github.com/Siva-kumar-r16)
+
+---
+
+⭐ This repository documents my learning and development journey throughout the ApexPlanet Web Development Internship.
+
+```
+
+This version keeps the full internship structure while removing repetitive sections, so the main README stays clean and easy to maintain. The five task progression and timelines follow the internship document. :contentReference[oaicite:0]{index=0}
+```
