@@ -106,8 +106,3 @@ Each task folder contains the projects and files completed during that stage of 
 [https://github.com/Siva-kumar-r16](https://github.com/Siva-kumar-r16)
 
 ---
-
-⭐ This repository documents my learning and development journey throughout the ApexPlanet Web Development Internship.
-
-This version keeps the full internship structure while removing repetitive sections, so the main README stays clean and easy to maintain. The five task progression and timelines follow the internship document. :contentReference[oaicite:0]{index=0}
-```
