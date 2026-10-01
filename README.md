@@ -108,4 +108,3 @@ Each task folder contains the projects and files completed during that stage of 
 ---
 ⭐ This repository documents my learning and development journey throughout the ApexPlanet Web Development
 Internship.
-```
