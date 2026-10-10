@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Outlaw's Journal</title>
+    <link rel="icon" href="data:,">
+    
+    <!-- Antique Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Cinematic Environment Background -->
+    <div class="cinematic-environment"></div>
+
+    <!-- The Cinematic Title Screen -->
+    <div id="journal-cover" class="cinematic-cover">
+        <div class="cover-content">
+            <h1 class="cover-title">THE<br>OUTLAW'S<br>JOURNAL</h1>
+            <p class="cover-subtitle">Every man has a story worth remembering.</p>
+            <button id="btn-open-journal" class="btn-primary" aria-label="Open the Journal">OPEN JOURNAL</button>
+        </div>
+    </div>
+
+    <!-- The Opened Journal Interface -->
+    <main id="journal-app" class="journal-app hidden">
+        <div class="book-container">
+            <!-- Left Dark Spine -->
+            <div class="book-spine"></div>
+
+            <!-- Parchment Pages Surface -->
+            <div class="parchment-surface">
+                
+                <!-- Navigation Tabs -->
+                <nav class="journal-nav" aria-label="Journal Sections">
+                    <button class="nav-tab active" data-target="dashboard">Dashboard</button>
+                    <button class="nav-tab" data-target="entries">Journal</button>
+                    <button class="nav-tab" data-target="sketchbook">Sketchbook</button>
+                    <button class="nav-tab" data-target="missions">Missions</button>
+                    <button class="nav-tab" data-target="memories">Memories</button>
+                    <button class="nav-tab" data-target="contact">Contact</button>
+                    <button class="nav-tab close-book" id="btn-close-journal">Close</button>
+                </nav>
+
+                <!-- PAGE CONTENT AREA -->
+                <div class="page-content">
+                    
+                    <!-- 1. DASHBOARD -->
+                    <section id="view-dashboard" class="view-section active">
+                        <header class="section-header">
+                            <h2 class="western-title">Field Notes</h2>
+                            <p class="date-display" id="dash-date"></p>
+                        </header>
+                        <div class="dashboard-grid">
+                            <div class="stat-card paper-scrap">
+                                <span class="stat-label">Entries Penned</span>
+                                <span class="stat-value" id="stat-entries">0</span>
+                            </div>
+                            <div class="stat-card paper-scrap">
+                                <span class="stat-label">Tasks Pending</span>
+                                <span class="stat-value" id="stat-missions">0</span>
+                            </div>
+                            <div class="stat-card paper-scrap">
+                                <span class="stat-label">Deeds Done</span>
+                                <span class="stat-value" id="stat-completed">0</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-actions">
+                            <button class="btn-ink" onclick="app.switchTab('entries')">✍ Write Entry</button>
+                            <button class="btn-ink" onclick="app.switchTab('missions')">⚔ Add Mission</button>
+                        </div>
+                        <div class="recent-preview" id="recent-preview"></div>
+                    </section>
+
+                    <!-- 2. JOURNAL ENTRIES -->
+                    <section id="view-entries" class="view-section">
+                        <header class="section-header">
+                            <h2 class="western-title">Personal Records</h2>
+                        </header>
+                        <div class="controls-bar">
+                            <input type="text" id="search-entries" class="ink-input" placeholder="Search memories..." aria-label="Search entries">
+                            <button class="btn-ink" id="btn-new-entry">+ New Page</button>
+                        </div>
+                        <div id="entries-list" class="entries-list"></div>
+
+                        <!-- Entry Editor / Reader Modal -->
+                        <div id="entry-editor" class="editor-panel hidden">
+                            <input type="hidden" id="entry-id">
+                            <input type="text" id="entry-title" class="editor-title ink-input" placeholder="Title of the day...">
+                            <div class="editor-meta">
+                                <input type="date" id="entry-date" class="ink-input">
+                                <select id="entry-mood" class="ink-input">
+                                    <option value="Reflective">Reflective</option>
+                                    <option value="Restless">Restless</option>
+                                    <option value="Bleak">Bleak</option>
+                                    <option value="Hopeful">Hopeful</option>
+                                    <option value="Weary">Weary</option>
+                                </select>
+                            </div>
+                            <textarea id="entry-body" class="editor-body handwritten" placeholder="What happened out there..."></textarea>
+                            <div class="editor-actions">
+                                <button class="btn-primary" id="btn-save-entry">Save Memory</button>
+                                <button class="btn-ink" id="btn-cancel-entry">Discard</button>
+                            </div>
+                            <p id="entry-msg" class="feedback-msg"></p>
+                        </div>
+                    </section>
+
+                    <!-- 3. SKETCHBOOK -->
+                    <section id="view-sketchbook" class="view-section">
+                        <header class="section-header">
+                            <h2 class="western-title">The Sketchbook</h2>
+                            <p class="subtitle">Sights from the trail.</p>
+                        </header>
+                        <div class="upload-area">
+                            <input type="file" id="sketch-upload" accept="image/*" class="hidden-input">
+                            <label for="sketch-upload" class="btn-ink upload-label">⇪ Add Photograph / Sketch</label>
+                            <p class="storage-warning">Notes are kept locally. Large files may not fit.</p>
+                        </div>
+                        <div id="sketch-gallery" class="gallery-grid"></div>
+                    </section>
+
+                    <!-- 4. DAILY MISSIONS -->
+                    <section id="view-missions" class="view-section">
+                        <header class="section-header">
+                            <h2 class="western-title">Things to do</h2>
+                        </header>
+                        <form id="mission-form" class="mission-adder">
+                            <input type="text" id="mission-input" class="ink-input" placeholder="What needs doing?" required>
+                            <select id="mission-priority" class="ink-input">
+                                <option value="low">Can Wait</option>
+                                <option value="medium" selected>Normal</option>
+                                <option value="high">Urgent</option>
+                            </select>
+                            <button type="submit" class="btn-primary">Add</button>
+                        </form>
+                        <div class="filter-tabs">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="pending">Pending</button>
+                            <button class="filter-btn" data-filter="completed">Done</button>
+                        </div>
+                        <ul id="mission-list" class="mission-list"></ul>
+                    </section>
+
+                    <!-- 5. MEMORIES TIMELINE -->
+                    <section id="view-memories" class="view-section">
+                        <header class="section-header">
+                            <h2 class="western-title">Trail of Memories</h2>
+                        </header>
+                        <div class="timeline-container" id="timeline-container"></div>
+                    </section>
+
+                    <!-- 6. CONTACT FORM -->
+                    <section id="view-contact" class="view-section">
+                        <header class="section-header">
+                            <h2 class="western-title">Send a Telegram</h2>
+                            <p class="subtitle">Leave a message for the camp.</p>
+                        </header>
+                        <form id="contact-form" class="antique-form" novalidate>
+                            <div class="form-group">
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" name="name" class="ink-input" aria-required="true" autocomplete="name">
+                                <span class="error-msg" id="error-name" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" name="email" class="ink-input" aria-required="true" autocomplete="email">
+                                <span class="error-msg" id="error-email" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <input type="text" id="contact-subject" name="subject" class="ink-input" aria-required="true">
+                                <span class="error-msg" id="error-subject" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" class="ink-input handwritten" rows="5" aria-required="true"></textarea>
+                                <span class="error-msg" id="error-message" aria-live="polite"></span>
+                            </div>
+                            <button type="submit" class="btn-primary" id="btn-submit-contact">Dispatch Telegram</button>
+                            <p id="contact-status" class="status-msg hidden"></p>
+                        </form>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The missing link to your script file! -->
+    <script src="script.js"></script>
+</body>
+</html>
