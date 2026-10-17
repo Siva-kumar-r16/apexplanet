@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sheldonverse | Explore the Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">THE SHELDONVERSE</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#favorites">Favorites</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="science-bg" aria-hidden="true">
+      <span class="orbit o1"></span>
+      <span class="orbit o2"></span>
+      <span class="orbit o3"></span>
+    </div>
+    <div class="hero-content">
+      <h1 class="visually-hidden">The Sheldonverse</h1>
+      <div id="title-tiles" class="title-tiles" aria-hidden="true"></div>
+      <h2>Two generations. One extraordinary universe.</h2>
+      <p>Explore characters, episodes, and discover your scientific counterpart from The Big Bang Theory and Young Sheldon — all powered by live TV data.</p>
+      <div class="hero-buttons">
+        <a href="#episodes" class="btn btn-primary">Explore Episodes</a>
+        <a href="#quiz" class="btn btn-secondary">Take the Quiz</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Character Explorer (TVMaze cast API) -->
+  <section id="characters" class="section">
+    <div class="container">
+      <h2 class="section-title">Character Directory</h2>
+      <div class="controls">
+        <input type="text" id="char-search" placeholder="Search characters or actors..." aria-label="Search characters">
+        <select id="char-filter" aria-label="Filter by show">
+          <option value="all">All Shows</option>
+          <option value="TBBT">The Big Bang Theory</option>
+          <option value="YS">Young Sheldon</option>
+        </select>
+      </div>
+      <div id="char-status" class="status-message">Loading cast...</div>
+      <div class="grid" id="character-grid">
+        <!-- Rendered via JS from the cast API -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Episode Explorer (TVMaze API) -->
+  <section id="episodes" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Episode Explorer</h2>
+      <div class="show-selector">
+        <button class="btn btn-primary show-btn active" data-show="The Big Bang Theory">The Big Bang Theory</button>
+        <button class="btn btn-secondary show-btn" data-show="Young Sheldon">Young Sheldon</button>
+      </div>
+
+      <div id="show-info" class="show-info-card glass-card hidden">
+        <!-- Show Details rendered here -->
+      </div>
+
+      <div class="controls hidden" id="episode-controls">
+        <input type="text" id="ep-search" placeholder="Search episodes..." aria-label="Search episodes">
+        <select id="season-filter" aria-label="Filter by season">
+          <option value="all">All Seasons</option>
+        </select>
+      </div>
+
+      <div id="api-status" class="status-message">Loading show data...</div>
+
+      <div class="grid" id="episode-grid">
+        <!-- Episodes rendered here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Quiz -->
+  <section id="quiz" class="section">
+    <div class="container">
+      <h2 class="section-title">Which Character Are You?</h2>
+      <div class="quiz-container glass-card" id="quiz-container">
+        <div class="progress-track"><div id="quiz-progress" class="progress-bar"></div></div>
+        <p id="quiz-step" class="quiz-step"></p>
+        <h3 id="question-text" class="question-text">Loading question...</h3>
+        <div id="answer-options" class="answer-grid">
+          <!-- Options rendered here -->
+        </div>
+        <div class="quiz-actions">
+          <button id="next-btn" class="btn btn-primary hidden" disabled>Next</button>
+        </div>
+      </div>
+      <div id="quiz-result" class="quiz-result hidden glass-card">
+        <img id="result-img" class="result-img hidden" alt="">
+        <h3 class="result-heading">You are: <span id="result-name" class="result-name"></span></h3>
+        <p id="result-desc"></p>
+        <button id="restart-btn" class="btn btn-secondary mt-2">Restart Quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Favorites Collection -->
+  <section id="favorites" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">My Collection</h2>
+      <p class="text-center mb-2 muted">Your saved characters (stored locally in this browser).</p>
+      <div class="grid" id="favorites-grid">
+        <!-- Favorites rendered here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <h2>THE SHELDONVERSE</h2>
+      <p>An independent educational project exploring the universe of theoretical physics and Texas childhoods.</p>
+      <p><small>Powered by the <a href="https://www.tvmaze.com/api" target="_blank" rel="noopener" class="footer-link">TVMaze API</a>. Not affiliated with Warner Bros. or Chuck Lorre Productions.</small></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
